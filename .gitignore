@@ -1,25 +1,60 @@
-*.iml
-.gradle
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizard.settings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
-*.apk
-*.aar
-*.jar
-
-# Project specific
-/composeApp/build/
+# Gradle and Build
+.gradle/
+build/
+/*/build/
 .kotlin/
+.incremental/
 
-# Large binary files (exceeds GitHub limit)
-gradle/wrapper/gradle-8.14.3-bin.zip
-*.msi
+# IntelliJ IDEA / Android Studio
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+.navigation/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Local configuration
+local.properties
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/shelf/
+.idea/dictionaries
+.idea/vcs.xml
+.idea/jsLibraryMappings.xml
+.idea/codeStyles/Project.xml
+.idea/codeStyles/codeStyleConfig.xml
+
+# Desktop specific
+/composeApp/build/
+/composeApp/build-binaries/
+*.log
+
+# Large binary files and packages
 *.exe
+*.msi
+*.dmg
+*.deb
+*.rpm
+*.pkg
+*.zip
+*.tar.gz
+gradle/wrapper/gradle-*-bin.zip
+
+# Python/Yt-dlp binaries (if downloaded locally)
+bin/
+ffmpeg/
+ffprobe/
+yt-dlp
+yt-dlp.exe
