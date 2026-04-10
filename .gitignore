@@ -1,0 +1,25 @@
+*.iml
+.gradle
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizard.settings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+*.apk
+*.aar
+*.jar
+
+# Project specific
+/composeApp/build/
+.kotlin/
+
+# Large binary files (exceeds GitHub limit)
+gradle/wrapper/gradle-8.14.3-bin.zip
+*.msi
+*.exe

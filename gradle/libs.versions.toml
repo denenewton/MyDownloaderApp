@@ -1,0 +1,98 @@
+[versions]
+agp = "8.7.3"
+android-compileSdk = "35"
+android-minSdk = "24"
+android-targetSdk = "34"
+androidx-activity = "1.9.3"
+androidx-appcompat = "1.7.0"
+androidx-core = "1.15.0"
+androidx-espresso = "3.6.1"
+androidx-lifecycle = "2.8.4"
+androidx-testExt = "1.2.1"
+billingKtxVersion = "6.2.1"
+composeHotReload = "1.0.0-alpha01"
+composeMultiplatform = "1.7.3"
+junit = "4.13.2"
+kotlin = "2.1.0"
+kotlinx-coroutines = "1.9.0"
+
+room = "2.7.0-alpha11"
+sqlite = "2.5.0-alpha11"
+ksp = "2.1.0-1.0.29"
+icons-extended = "1.7.3"
+filekit = "0.8.8"
+coil = "3.0.4"
+compose-components = "1.7.3"
+koin = "4.0.0"
+kotlinx-datetime = "0.6.1"
+kotlinx-serialization = "1.7.3"
+buildConfig = "5.5.0"
+jlayer = "1.0.1"
+billingKtx = "7.1.1"
+gemini = "0.9.0"
+ktor = "3.0.1"
+youtubedl = "0.14.0"
+
+[libraries]
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinx-coroutines" }
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
+kotlinx-coroutines-swing = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-swing", version.ref = "kotlinx-coroutines" }
+
+#noinspection SimilarGradleDependency
+billing-ktx-v621 = { module = "com.android.billingclient:billing-ktx", version.ref = "billingKtxVersion" }
+jlayer = { group = "javazoom", name = "jlayer", version.ref = "jlayer" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
+kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
+# Core Koin for KMP logic
+koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
+# Koin for Compose Multiplatform (UI Injection)
+koin-compose = { module = "io.insert-koin:koin-compose", version.ref = "koin" }
+# Koin for ViewModels (Shared ViewModels support)
+koin-compose-viewmodel = { module = "io.insert-koin:koin-compose-viewmodel", version.ref = "koin" }
+# Koin for Android specific (needed for the Android App side)
+koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
+
+coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil" }
+coil-network = { module = "io.coil-kt.coil3:coil-network-okhttp", version.ref = "coil" }
+filekit-compose = { module = "io.github.vinceglb:filekit-compose", version.ref = "filekit" }
+compose-components = { module = "org.jetbrains.compose.components:components-resources", version.ref = "compose-components" }
+material-icons-extended = { module = "org.jetbrains.compose.material:material-icons-extended", version.ref = "icons-extended" }
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+kotlin-testJunit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
+junit = { module = "junit:junit", version.ref = "junit" }
+androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "androidx-core" }
+androidx-testExt-junit = { module = "androidx.test.ext:junit", version.ref = "androidx-testExt" }
+androidx-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "androidx-espresso" }
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "androidx-appcompat" }
+androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activity" }
+androidx-lifecycle-viewmodelCompose = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-runtimeCompose = { module = "org.jetbrains.androidx.lifecycle:lifecycle-runtime-compose", version.ref = "androidx-lifecycle" }
+#room
+androidx-sqlite-bundled = { module = "androidx.sqlite:sqlite-bundled", version.ref = "sqlite" }
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
+#noinspection SimilarGradleDependency
+billing-ktx = { group = "com.android.billingclient", name = "billing-ktx", version.ref = "billingKtx" }
+gemini = { module = "com.google.ai.client.generativeai:generativeai", version.ref = "gemini" }
+
+# Ktor
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
+ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
+ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
+
+youtubedl-android = { module = "com.github.yausername.youtubedl-android:library", version.ref = "youtubedl" }
+youtubedl-ffmpeg = { module = "com.github.yausername.youtubedl-android:ffmpeg", version.ref = "youtubedl" }
+
+[plugins]
+kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+androidApplication = { id = "com.android.application", version.ref = "agp" }
+androidLibrary = { id = "com.android.library", version.ref = "agp" }
+composeHotReload = { id = "org.jetbrains.compose.hot-reload", version.ref = "composeHotReload" }
+composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "composeMultiplatform" }
+composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+buildConfig = { id = "com.github.gmazzo.buildconfig", version.ref = "buildConfig" }
+#room
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+androidx-room = { id = "androidx.room", version.ref = "room" }
