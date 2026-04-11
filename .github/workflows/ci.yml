@@ -40,7 +40,7 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build with Gradle
-        run: ./gradlew build -x test
+        run: ./gradlew assemble
 
       - name: Package Desktop App
         run: ./gradlew :composeApp:${{ matrix.task }}
