@@ -11,9 +11,9 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.PlaylistPlay
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.ErrorOutline
-import androidx.compose.material.icons.filled.PlaylistPlay
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -81,7 +81,7 @@ fun SingleItemHeader(metadata: com.example.boilerplate.downloader.MediaMetadata)
 fun PlaylistHeader(playlist: SearchResult.Playlist) {
     Row(verticalAlignment = Alignment.CenterVertically) {
         Surface(modifier = Modifier.size(60.dp), shape = RoundedCornerShape(12.dp), color = AppleRed.copy(alpha = 0.1f)) {
-            Icon(Icons.Default.PlaylistPlay, null, modifier = Modifier.padding(12.dp), tint = AppleRed)
+            Icon(Icons.AutoMirrored.Filled.PlaylistPlay, null, modifier = Modifier.padding(12.dp), tint = AppleRed)
         }
         Spacer(modifier = Modifier.width(16.dp))
         Column {

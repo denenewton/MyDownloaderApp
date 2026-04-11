@@ -59,9 +59,7 @@ class FakeDownloadDao : DownloadDao {
 // We use a simple interface or a mock if possible, but faking the abstract class:
 class FakeAppDatabaseMedia(private val dao: FakeDownloadDao) : AppDatabaseMedia() {
     override fun downloadDao(): DownloadDao = dao
-    override fun clearAllTables() {
-        dao.clear()
-    }
+
     override fun createInvalidationTracker(): androidx.room.InvalidationTracker {
         return androidx.room.InvalidationTracker(this, emptyMap(), emptyMap(), "")
     }
