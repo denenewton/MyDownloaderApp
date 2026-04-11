@@ -78,7 +78,7 @@ compose.desktop {
         mainClass = "com.example.boilerplate.MainKt"
 
         nativeDistributions {
-            targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
+            targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb, TargetFormat.Rpm)
             packageName = "MusicDownloader"
             packageVersion = "1.0.0"
             
@@ -89,6 +89,14 @@ compose.desktop {
 
             windows {
                 iconFile.set(project.file("src/jvmMain/resources/icon.ico"))
+                menu = true
+                shortcut = true
+            }
+
+            linux {
+                iconFile.set(project.file("src/jvmMain/resources/icon.png"))
+                shortcut = true
+                packageName = "music-downloader"
             }
         }
     }
