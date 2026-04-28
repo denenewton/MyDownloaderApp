@@ -199,15 +199,42 @@ class DesktopMediaDownloader0 : MediaDownloader {
         }
     }
 
-    override fun shareFile(path: String) {
-        val file = File(path)
-        if (!file.exists()) return
-        val os = System.getProperty("os.name").lowercase()
-        try {
-            if (os.contains("mac")) ProcessBuilder("open", "-R", file.absolutePath).start()
-            else if (os.contains("win")) ProcessBuilder("explorer.exe", "/select,", file.absolutePath).start()
-        } catch (e: Exception) { e.printStackTrace() }
+   override fun shareFile(path: String) {
+    val file = File(path)
+    if (!file.exists()) return
+    val os = System.getProperty("os.name").lowercase()
+    
+    try {
+        when {
+            os.contains("mac") -> {
+                ProcessBuilder("open", "-R", file.absolutePath).start()
+            }
+            os.contains("win") -> {
+                ProcessBuilder("explorer.exe", "/select,", file.absolutePath).start()
+            }
+            os.contains("linux") -> {
+                // Tenta o método via DBus (funciona em GNOME, KDE, XFCE, etc.)
+                // Isso abre a pasta e seleciona/destaca o arquivo
+                ProcessBuilder(
+                    "dbus-send",
+                    "--session",
+                    "--print-reply",
+                    "--dest=org.freedesktop.FileManager1",
+                    "/org/freedesktop/FileManager1",
+                    "org.freedesktop.FileManager1.ShowItems",
+                    "array:string:file://${file.absolutePath}",
+                    "string:\"\""
+                ).start()
+            }
+        }
+    } catch (e: Exception) {
+        // Fallback: Se o DBus falhar, apenas abre a pasta pai com xdg-open
+        if (os.contains("linux")) {
+            ProcessBuilder("xdg-open", file.parentFile.absolutePath).start()
+        }
+        e.printStackTrace()
     }
+}
 
     override fun deleteFile(path: String): Boolean = File(path).delete()
 
